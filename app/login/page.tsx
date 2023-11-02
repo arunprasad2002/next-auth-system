@@ -4,6 +4,7 @@ import Button from "@/components/UI/Button";
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const page = () => {
   interface SingupFormState {
@@ -53,6 +54,9 @@ const page = () => {
           onChange={onChangeHandelar}
           value={formState?.password}
         />
+      </div>
+      <div className="mb-5">
+        <Link href={"/singup"}>Create account</Link>
       </div>
       <Button text="Submit" link="#" onClick={onLogin} />
     </div>

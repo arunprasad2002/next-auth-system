@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
     const response = NextResponse.json({
       message: "Logout successfully",
@@ -10,6 +10,8 @@ export async function GET() {
       httpOnly: true,
       expires: new Date(0),
     });
+    // Redirect the user to the login page
+
     return response;
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
